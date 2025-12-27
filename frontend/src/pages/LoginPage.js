@@ -78,6 +78,11 @@ const LoginPage = () => {
           Create one now
         </span>
       </p>
+      <p style={{ marginTop: 8 }}>
+        <span role="link" style={{ color: "#0f5a44", cursor: "pointer" }} onClick={() => navigate("/forgot-password")}>
+          Forgot your password?
+        </span>
+      </p>
     </div>
   );
 };

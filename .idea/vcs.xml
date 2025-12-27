@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PretiumInvestment2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/render-flask-deployment" vcs="Git" />
   </component>
 </project>

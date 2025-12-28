@@ -1,0 +1,3 @@
+[submodule "render-flask-deployment"]
+	path = render-flask-deployment
+	url = https://github.com/Rxahm/render-flask-deployment

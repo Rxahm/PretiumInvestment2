@@ -193,7 +193,7 @@ def password_reset_request(request):
         token = token_gen.make_token(user)
 
         # Build reset URL for email delivery
-        default_base = "http://localhost:3000/reset-password" if settings.DEBUG else "https://pretiuminvestment.com/reset-password"
+        default_base = "http://localhost:3000/reset-password" if settings.DEBUG else "https://pretium-portal.onrender.com/reset-password"
         base = os.getenv("FRONTEND_RESET_URL_BASE", default_base)
         reset_url = f"{base}?uid={uidb64}&token={token}"
 

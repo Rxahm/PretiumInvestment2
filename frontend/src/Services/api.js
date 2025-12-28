@@ -1,12 +1,11 @@
 import axios from "axios";
 
 const normalizeBaseUrl = (url) => {
-  // Priority: explicit env → sensible default based on host
+  // Priority: explicit env, then sensible default based on host
   if (!url) {
     try {
       const isLocal = typeof window !== "undefined" && /localhost|127\.0\.0\.1/.test(window.location.host);
-      // In production, default to same-origin '/api/' so frontends behind a reverse proxy work without extra config
-      return isLocal ? "http://127.0.0.1:8000/api/" : "/api/";
+      return isLocal ? "http://127.0.0.1:8000/api/" : "https://api.pretiuminvestment.com/api/";
     } catch (_) {
       return "http://127.0.0.1:8000/api/";
     }

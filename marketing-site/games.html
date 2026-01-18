@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Literacy Games – Pretium</title>
+  <!-- Use same font and theme variables as the main site to maintain a consistent look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #0d1f2d 0%, #143f3f 50%, #145a5a 100%);
+      --surface: rgba(255, 255, 255, 0.08);
+      --surface-strong: rgba(255, 255, 255, 0.18);
+      --text: #f4f7f6;
+      --accent: #3ad29f;
+      --accent-dark: #2aa57a;
+      --muted: rgba(244, 247, 246, 0.72);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      --transition: all 180ms ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(12, 28, 36, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4vw;
+    }
+
+    header img {
+      height: 100px;
+      width: auto;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      transition: var(--transition);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      gap: 4rem;
+      padding: 3rem 4vw;
+    }
+
+    .hero {
+      text-align: center;
+      display: grid;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 18px 40px rgba(5, 20, 24, 0.35);
+      display: grid;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(58, 210, 159, 0.35);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fdfefe;
+    }
+
+    .card p {
+      color: rgba(244, 247, 246, 0.78);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      background: var(--accent);
+      color: #051418;
+      box-shadow: 0 12px 30px rgba(58, 210, 159, 0.35);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--accent-dark);
+      box-shadow: 0 10px 24px rgba(42, 165, 122, 0.4);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(4, 18, 26, 0.72);
+      backdrop-filter: blur(18px);
+      padding: 2.5rem 4vw;
+      text-align: center;
+      color: rgba(244, 247, 246, 0.78);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="assets/logo.png" alt="Pretium Investments logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="https://pretium-portal.onrender.com/">Portal</a></li>
+        <li><a href="games.html" aria-current="page">Financial Literacy Games</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Financial Literacy Games</h1>
+      <p>Interactive experiences that teach you how to budget, invest and plan for your future. Choose a game below to begin.</p>
+    </section>
+    <section class="cards">
+      <div class="card">
+        <h2>Money Game</h2>
+        <p>Our original simulation exploring budgeting, investing and debt management. Learn the basics of personal finance through engaging scenarios.</p>
+        <a class="btn" href="https://money-game.onrender.com">Play Money Game</a>
+      </div>
+      <div class="card">
+        <h2>Money Journey</h2>
+        <p>Embark on a new adventure with unpredictable life events, cognitive bias challenges and deeper market dynamics. Perfect for advanced learners seeking a greater challenge.</p>
+        <!-- Link to the GitHub Pages site for Money Journey -->
+        <a class="btn" href="https://rxahm.github.io/MoneyJourney/">Play Money Journey</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 Pretium Investments LLC – Learn more about our programmes and contact us for partnership opportunities.</p>
+  </footer>
+</body>
+</html>
